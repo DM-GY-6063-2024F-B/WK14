@@ -21,7 +21,11 @@ private:
     BLEService* mService = new BLEService(serviceUUID.c_str());
     EasyBLE::pCharacteristic = new BLECharacteristic(charactUUID.c_str(), BLERead | BLEWrite, 128);
 
-    BLE.begin();
+    if(!BLE.begin()){
+      Serial.println("BLE begin failed");
+    }
+    Serial.println("BLE started");
+
     BLE.setLocalName(deviceName.c_str());
     BLE.setAdvertisedService(*mService);
     mService->addCharacteristic(*pCharacteristic);
@@ -31,4 +35,4 @@ private:
 };
 
 BLECharacteristic* EasyBLE::pCharacteristic;
-String EasyBLE::CHARACTERISTIC_UUID("250b0d01-1b4f-4f16-9171-f63c733d15ab");
+String EasyBLE::CHARACTERISTIC_UUID("250b0d01-1b4f-4f16-9171-f63c733dbeef");

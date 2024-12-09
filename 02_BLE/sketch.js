@@ -1,4 +1,4 @@
-let SERVICE_UUID = "250b0d00-1b4f-4f16-9171-f63c733d15ab";
+let SERVICE_UUID = "250b0d00-1b4f-4f16-9171-f63c733d8114";
 
 let mBLE;
 let mCharacteristic;
